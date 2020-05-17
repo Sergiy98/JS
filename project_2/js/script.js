@@ -106,9 +106,23 @@ window.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    closeBtn.addEventListener('click', () => {
+    function closeModal () {
         modal.classList.toggle('show');
         document.body.style.overflow = '';
+    }
+
+    closeBtn.addEventListener('click', closeModal);
+
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            closeModal();
+        }
+    });
+
+    document.addEventListener('keydown', (e) => {
+        if (e.code === 'Escape' && modal.classList.contains('show')) {
+            closeModal();
+        }
     });
 
 });
