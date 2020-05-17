@@ -101,13 +101,13 @@ window.addEventListener('DOMContentLoaded', () => {
 
     btn.forEach(button => {
         button.addEventListener('click', () => {
-            modal.style.display = 'block';
+            modal.classList.toggle('show');
             document.body.style.overflow = 'hidden';
         });
     });
 
     closeBtn.addEventListener('click', () => {
-        modal.style.display = 'none';
+        modal.classList.toggle('show');
         document.body.style.overflow = '';
     });
 
