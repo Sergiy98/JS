@@ -93,4 +93,22 @@ window.addEventListener('DOMContentLoaded', () => {
 
     setClock('.timer', deadline);
     
+    // Modal
+
+    const btn = document.querySelectorAll('[data-modal]'),
+        modal = document.querySelector('.modal'),
+        closeBtn = document.querySelector('[data-close]');
+
+    btn.forEach(button => {
+        button.addEventListener('click', () => {
+            modal.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        });
+    });
+
+    closeBtn.addEventListener('click', () => {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+    });
+
 });
